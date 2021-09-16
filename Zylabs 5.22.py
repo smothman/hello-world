@@ -8,7 +8,6 @@ Car wax -- $12''')
 
 print()
 
-# second segment for prompting user for two services from menu.
 
 print('Select first service:')
 service1 = input()
@@ -16,8 +15,6 @@ print('Select second service:')
 service2 = input()
 
 print()
-# third segment including the fourth segment too, invoice for the  services selected and if user input a '-' the we display no service.
-# I have done a little bit modification, if some user input a wrong string then we display invalid option selected.
 
 print("Daya's auto shop invoice")
 
