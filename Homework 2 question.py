@@ -51,13 +51,26 @@ def extract_date(date):
         return ""
 
 
-date = input()
+file = open('inputDates.txt', 'r')
+file_dates = []
 
-while (date != "-1"):
-    new_date = extract_date(date)
+file_dates = file.readlines()
+
+file.close()
+
+for i in range(len(file_dates) - 1):
+    file_dates[i] = file_dates[i][:-1]
+
+print("Input file content:\n")
+for i in file_dates:
+    print(i)
+
+print("\nOutput\n")
+for i in file_dates:
+    if i == "-1":
+        break
+
+    new_date = extract_date(i)
 
     if new_date != "":
         print(new_date)
-
-    print()
-    date = input()
