@@ -61,16 +61,29 @@ file.close()
 for i in range(len(file_dates) - 1):
     file_dates[i] = file_dates[i][:-1]
 
+file = open('parsedDates.txt', 'w')
+
+for i in file_dates:
+    if i == "-1":
+        break
+    else:
+        new_date = extract_date(i)
+        if new_date != "":
+            file.write(new_date + "\n")
+
+file.close()
+
+file = open('parsedDates.txt', 'r')
+file_parsed_dates = []
+
+file_parsed_dates = file.readlines()
+
+file.close()
+
 print("Input file content:\n")
 for i in file_dates:
     print(i)
 
-print("\nOutput\n")
-for i in file_dates:
-    if i == "-1":
-        break
-
-    new_date = extract_date(i)
-
-    if new_date != "":
-        print(new_date)
+print("\nOutput file content:\n")
+for i in file_parsed_dates:
+    print(i)
